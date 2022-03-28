@@ -13,13 +13,17 @@ interface Services
     public Food prepareFood(Order orderNumber);
 
 }
-public class Restaurant implements Booking,Services
+interface Feedback1{
+    public int giveFeedback1(int rateFood);
+}
+public class RestaurantFeatures implements Booking,Services,Feedback1
 {
         String restaurantName;
         int orderNo;
         String foodName1;
+        private int rateFood;
 
-        public Restaurant()
+        public RestaurantFeatures()
         {
 
         }
@@ -32,7 +36,7 @@ public class Restaurant implements Booking,Services
            this.restaurantName = restaurantName;
          }
 
-        public Restaurant(String restaurantName)
+        public RestaurantFeatures(String restaurantName)
         {
               this.restaurantName = restaurantName;
         }
@@ -65,5 +69,20 @@ public class Restaurant implements Booking,Services
         Food food1  = new Food(orderNumber2);
         System.out.println("Preparing food");
         return food1;
+    }
+
+    @Override
+    public int giveFeedback1(int rateFood) {
+        //Food food2 = new Food(rateFood);
+        this.rateFood = rateFood;
+        System.out.println("rating food "+rateFood);
+        return rateFood;
+
+    }
+    GasBill UseGas(Gas g)
+    {
+
+        GasBill gb = new GasBill(g);
+        return  gb;
     }
 }

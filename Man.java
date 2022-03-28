@@ -1,5 +1,7 @@
 package Human;
 import java.*;
+
+import Electronics.AirConditioner;
 import Human.Shirt;
 import Transport.TwoWheeler;
 import Transport.Vehicle;
@@ -26,6 +28,9 @@ public class Man {
     {
         System.out.println();
     }
+    AirConditioner acObj = new AirConditioner("Samsung",100000,23);   //hasA
+
+    //public ();
 
 
 }

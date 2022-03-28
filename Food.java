@@ -19,4 +19,5 @@ public class Food
     public void setFoodName(String foodName) {
         this.foodName = foodName;
     }
+
 }

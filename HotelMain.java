@@ -1,8 +1,14 @@
+import Electronics.AirConditioner;
+import Entertainment.Amphitheatre;
+import Entertainment.Movie;
+import Entertainment.Music;
 import Restaurant.*;
-import Electronics.Laptop;
+import Electronics.*;
 import Examination.Exam;
 import Examination.ReportCard;
 import Human.*;
+import Trading.*;
+import Company.Acquarium;
 
 public class HotelMain
 {
@@ -14,7 +20,8 @@ public class HotelMain
 
 
         Student studentObj = new Student();
-
+        studentObj.readBook("Lord of the Rings");
+        studentObj.doStudying();
 //EXAM,laptop,result,reportCard
 
         //works
@@ -30,15 +37,20 @@ public class HotelMain
 
 //Company,Restaurant,KFC        //Company
 
-        Restaurant restaurant = new Restaurant("Eat Palaza");
+        RestaurantFeatures restaurant = new RestaurantFeatures("Eat Palaza");
         Company comObj = new Company(3);
         comObj.manageBranches();
         restaurant.bookTable(2);
+        Gas gasObj = new Gas();
 
-        Restaurant resObj = new Restaurant();
+        GasBill gbObj = new GasBill(gasObj);
+
+
+        RestaurantFeatures resObj = new RestaurantFeatures();
         Order orderMainObj = resObj.orderFood(123);
         Food foodObj = resObj.prepareFood(orderMainObj);
         System.out.println("foodname is "+ foodObj.getFoodName());
+        resObj.giveFeedback1(3);
 
         KFC kfcObj = new KFC();
         kfcObj.bookTable(1);
@@ -47,7 +59,19 @@ public class HotelMain
         Food foodKFCObj = new Food(orderKFCMainObj);
         System.out.println("KFC food name if "+foodKFCObj.getFoodName());
 
-        Feedback feedbackObj = new Feedback("Good food");
+        AirConditioner acObj = new AirConditioner("samsung",40000,23);
+        acObj.printACDetails();
+
+        Toys toyObj = new Toys("TeddyBear");
+        Acquarium acquarium = new Acquarium();
+        Trade tradeObj = new Trade();
+        tradeObj.doTrading(acObj,toyObj,acquarium);
+
+        Music music= new Music("Rock");
+        Movie mObj = new Movie("Hero");
+
+        Amphitheatre ampObj = new Amphitheatre();
+        ampObj.functions(music,mObj);
 
     }
 }

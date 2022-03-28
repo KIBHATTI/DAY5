@@ -5,7 +5,7 @@ public class KFC implements Booking,Services
      int orderKFCNo;
     @Override
     public int bookTable(int noOfTable) {
-        super.bookTable(noOfTable);
+        //super();
         System.out.println(noOfTable +"Table booked in KFC ");
         return noOfTable;
     }
